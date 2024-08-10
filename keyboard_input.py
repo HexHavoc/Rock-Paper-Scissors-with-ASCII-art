@@ -8,7 +8,7 @@ class Keyboard:
     def __init__(self):
         self.computer_point = 0
         self.user_point = 0
-        self.pick_list = ['r','p','s','r','p','s']
+        self.pick_list = ['r','p','s','r','p','s','r','p','s']
     
     def computer_selection(self):
         self.computer_choice = random.choice(self.pick_list)
@@ -22,25 +22,47 @@ class Keyboard:
     def countdown(self):
         sys.stdout.write("Rock ")
         sys.stdout.flush()
-        time.sleep(1)
+        time.sleep(0.5)
 
         sys.stdout.write("Paper ")
         sys.stdout.flush()
-        time.sleep(1)
+        time.sleep(0.5)
 
         sys.stdout.write("Scissor ")
         sys.stdout.flush()
-        time.sleep(1)
+        time.sleep(0.5)
 
         sys.stdout.write("Shoot!! ")
         sys.stdout.flush()
-        time.sleep(1)
+        time.sleep(0.5)
+
+        print()
 
 
     def logic_and_printing(self):
-
         if(self.computer_choice == self.user_choice):
+            print()
             print("DRAW!\n")
+
+
+        if(self.computer_point == 5):
+            print("COMPUTER WON THE MATCH!!!\n")
+            quit_choice = input("IF YOU WANT TO CONTINUE PRESS c or PRESS e TO EXIT\n")
+            if(quit_choice == 'c'):
+                pass
+
+            else:
+                print("THANKS FOR PLAYING SEE YA NEXT TIME :) \n")
+                sys.exit()
+
+        if(self.user_point == 5):
+            print("USER WON THE MATCH!!!\n")
+            if(quit_choice == 'c'):
+                pass
+
+            else:
+                print("THANKS FOR PLAYING SEE YA NEXT TIME :) \n")
+                sys.exit()                     
 
         elif(self.computer_choice == 'r' and self.user_choice == 's'):
             print("Computer chose ROCK")
@@ -52,6 +74,8 @@ class Keyboard:
             print()
 
             print("COMPUTER WINS!!!")
+            self.computer_point += 1
+            print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
         elif(self.computer_choice == 's' and self.user_choice == 'r'):
@@ -64,6 +88,8 @@ class Keyboard:
             print()
 
             print("USER WINS!!!")
+            self.user_point += 1
+            print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
 
@@ -77,6 +103,8 @@ class Keyboard:
             print()
 
             print("COMPUTER WINS!!!")
+            self.computer_point += 1
+            print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
         
@@ -86,10 +114,12 @@ class Keyboard:
             print()
 
             print("User chose PAPER")
-            print(rock_ascii)
+            print(paper_ascii)
             print()
 
             print("USER WINS!!!")
+            self.user_point += 1
+            print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
         elif(self.computer_choice == 's' and self.user_choice == 'p'):
@@ -102,6 +132,8 @@ class Keyboard:
             print()
 
             print("COMPUTER WINS!!!")
+            self.computer_point += 1
+            print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
         elif(self.computer_choice == 'p' and self.user_choice == 's'):
@@ -114,7 +146,11 @@ class Keyboard:
             print()
 
             print("USER WINS!!!")
+            self.user_point += 1
+            print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
+
+
 
 
     def call_everything(self):

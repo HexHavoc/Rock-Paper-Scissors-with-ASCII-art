@@ -2,12 +2,16 @@ from keyboard_input import *
 
 class RPS:
     def __init__(self):
-        points = int(input("which one do you need best of 3 or best of 5:"))
+        print("WELCOME TO Rock,Paper,Scissors game made by HexHavoc!\n")
+        print("FIRST TO REACH 5 POINTS WINS!\n")
         user_input = input("Which will be your input method keyboard or mic(Type k for keyboard and m for mic)?:")
+        print()
 
-        if(user_input == 'k' and points == 3):
-            while True:
-                kb.call_everything()
+        
+        if(user_input == 'k'):
+                while True:
+                    kb.call_everything()
+                
 
 
 rps = RPS()
