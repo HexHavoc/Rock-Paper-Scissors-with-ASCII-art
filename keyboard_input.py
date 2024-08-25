@@ -63,6 +63,7 @@ class Keyboard:
 
 
     def logic_and_printing(self):
+        self.print_continue = True
         if(self.computer_choice == self.user_choice):
             print()
             print("DRAW!\n")
@@ -162,6 +163,12 @@ class Keyboard:
             print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
+        else:
+            print()
+            print("PLEASE ENTER THE MENTIONED CHARACTERS(r,s,p) NO OTHER CHARACTERS ARE ALLOWED!!!!\n")
+            self.print_continue = False
+            
+
 
 
 
@@ -169,8 +176,9 @@ class Keyboard:
         self.point_checking()
         self.computer_selection()
         self.user_selection()
-        self.countdown()
         self.logic_and_printing()
+        if(self.print_continue == True):
+            self.countdown()
 
 
 kb = Keyboard()
