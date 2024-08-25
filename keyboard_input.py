@@ -38,16 +38,11 @@ class Keyboard:
 
         print()
 
-
-    def logic_and_printing(self):
-        if(self.computer_choice == self.user_choice):
-            print()
-            print("DRAW!\n")
-
-
+    def point_checking(self):
         if(self.computer_point == 5):
             print("COMPUTER WON THE MATCH!!!\n")
-            quit_choice = input("IF YOU WANT TO CONTINUE PRESS c or PRESS e TO EXIT\n")
+            quit_choice = input("IF YOU WANT TO CONTINUE PRESS c or PRESS e TO EXIT")
+
             if(quit_choice == 'c'):
                 pass
 
@@ -60,9 +55,20 @@ class Keyboard:
             if(quit_choice == 'c'):
                 pass
 
+
             else:
                 print("THANKS FOR PLAYING SEE YA NEXT TIME :) \n")
-                sys.exit()                     
+                sys.exit() 
+
+
+
+    def logic_and_printing(self):
+        if(self.computer_choice == self.user_choice):
+            print()
+            print("DRAW!\n")
+
+
+                            
 
         elif(self.computer_choice == 'r' and self.user_choice == 's'):
             print("Computer chose ROCK")
@@ -75,6 +81,7 @@ class Keyboard:
 
             print("COMPUTER WINS!!!")
             self.computer_point += 1
+            print()
             print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
@@ -89,6 +96,7 @@ class Keyboard:
 
             print("USER WINS!!!")
             self.user_point += 1
+            print()
             print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
@@ -104,6 +112,7 @@ class Keyboard:
 
             print("COMPUTER WINS!!!")
             self.computer_point += 1
+            print()
             print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
@@ -119,6 +128,7 @@ class Keyboard:
 
             print("USER WINS!!!")
             self.user_point += 1
+            print()
             print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
@@ -133,6 +143,7 @@ class Keyboard:
 
             print("COMPUTER WINS!!!")
             self.computer_point += 1
+            print()
             print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
@@ -147,6 +158,7 @@ class Keyboard:
 
             print("USER WINS!!!")
             self.user_point += 1
+            print()
             print(f"COMPUTER-{self.computer_point}:USER-{self.user_point}")
             print()
 
@@ -154,6 +166,7 @@ class Keyboard:
 
 
     def call_everything(self):
+        self.point_checking()
         self.computer_selection()
         self.user_selection()
         self.countdown()
